@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(array('register' => false, 'reset' => false, 'confirm' => false, 'verify' => false));
+Auth::routes();
 
-Route::get('/home', 'App\Http\Controllers\HomeController@index')->name('home');
-Route::get('index', 'App\Http\Controllers\ReservationController@index');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('portal', 'App\Http\Controllers\PortalController@index');
